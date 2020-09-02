@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 3. Python is cool! """
+""" Is it a number? """
 
 from flask import Flask
 app = Flask(__name__)
