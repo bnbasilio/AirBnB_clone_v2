@@ -27,8 +27,6 @@ class DBStorage():
                                               getenv('HBNB_MYSQL_DB')),
                                       pool_pre_ping=True)
 
-        """drop all tables if the environment variable HBNB_ENV is equal to test"""
-
     def all(self, cls=None):
         """get all db instances"""
         if cls:

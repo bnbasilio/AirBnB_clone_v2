@@ -21,7 +21,6 @@ class FileStorage:
        !!! Objects printed in do_all console func have quotes !!!
 
 """
-        #print("from all obj={}".format(FileStorage.__objects))
         if cls:
             obj_dict = {}
             for key, val in self.__objects.items():
@@ -42,7 +41,7 @@ class FileStorage:
         with open(FileStorage.__file_path, 'w') as f:
             temp = {}
             temp.update(FileStorage.__objects)
-           # print("temp.items{}".format(temp.items()))
+            # print("temp.items{}".format(temp.items()))
             # print("temp.items{}".format(type(temp.items())))
             for key, val in temp.items():
                 temp[key] = val.to_dict()
