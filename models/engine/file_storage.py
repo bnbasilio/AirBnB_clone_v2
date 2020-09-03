@@ -76,3 +76,7 @@ class FileStorage:
             del self.__objects["{}.{}".format(type(obj).__name__, obj.id)]
         except KeyError:
             pass
+
+    def close(self):
+        """ deserializes the JSON file to objects """
+        self.reload()
