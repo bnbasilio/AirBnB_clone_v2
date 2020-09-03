@@ -47,7 +47,8 @@ class DBStorage():
 
     def new(self, obj):
         """add obj to current session"""
-        self.__session.add(obj)
+        if obj:
+            self.__session.add(obj)
 
     def save(self):
         """commit all changes to db sess"""
@@ -61,14 +62,6 @@ class DBStorage():
     def reload(self):
         """create all tables in db
             create current db session"""
-        from models.base_model import BaseModel, Base
-        from models.user import User
-        from models.state import State
-        from models.city import City
-        from models.amenity import Amenity
-        from models.place import Place
-        from models.review import Review
-
         Base.metadata.create_all(self.__engine)
         self.__session = sessionmaker(bind=self.__engine,
                                       expire_on_commit=False)
